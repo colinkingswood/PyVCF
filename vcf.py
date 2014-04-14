@@ -448,7 +448,7 @@ def main():
     with contextlib.closing(StringIO.StringIO(textwrap.dedent(buff))) as sock:
         vcf_file = VCFReader(sock, aggressive=True)
         for record in vcf_file:
-            print record
+            print(record)
 
 
 if __name__ == '__main__':
