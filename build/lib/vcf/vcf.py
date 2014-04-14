@@ -271,7 +271,7 @@ class VCFReader(object):
 
         parser = _vcf_metadata_parser()
 
-        line = self.reader.next()
+        line = self.reader.__next__()
         while line.startswith('##'):
             line = line.strip()
             if line.startswith('##INFO'):
@@ -290,7 +290,7 @@ class VCFReader(object):
                 key, val = parser.read_meta(line.strip())
                 self._metadata[key] = val
 
-            line = self.reader.next()
+            line = self.reader.__next__()
 
         fields = line.split()
         self._samples = fields[9:]
@@ -382,7 +382,7 @@ class VCFReader(object):
         '''Return the next record in the file.'''
         if self._samples is None:
             self._parse_metainfo()
-        row = self.reader.next().split()
+        row = self.reader.__next__().split()
         chrom = row[0]
         pos = int(row[1])
 
