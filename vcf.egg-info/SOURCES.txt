@@ -1,0 +1,7 @@
+README.rst
+setup.py
+vcf/vcf.py
+vcf.egg-info/PKG-INFO
+vcf.egg-info/SOURCES.txt
+vcf.egg-info/dependency_links.txt
+vcf.egg-info/top_level.txt
